@@ -3,7 +3,11 @@ package _6_disabling_tests_done.practice;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-//TODO: your teammate forgot to implement his test... and your build is broken. fix it with help of 1 annotation
+/**
+ * TODO:
+ * your teammate forgot to implement his test... and your build is broken.
+ * fix it with help of 1 annotation
+ */
 public class DisableClassPracticeTest {
 
 
