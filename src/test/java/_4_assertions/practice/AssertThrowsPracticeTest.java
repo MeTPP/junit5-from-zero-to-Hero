@@ -6,8 +6,10 @@ import org.junit.jupiter.api.Test;
 public class AssertThrowsPracticeTest {
 
 
-    // fix this test.
-    // assert that exception message equals to "boom!" in the end of the test
+    /**
+     * FIXME: fix this test.
+     * assert that exception message equals to "boom!" in the end of the test
+     */
     @Test
     void test() {
         Assertions.assertDoesNotThrow(() -> {
@@ -15,7 +17,9 @@ public class AssertThrowsPracticeTest {
         });
     }
 
-    // fix this test. change expected type.
+    /**
+     * FIXME:   fix this test. change expected type.
+     */
     @Test
     void test1() {
         Assertions.assertThrowsExactly(RuntimeException.class, () -> {
@@ -23,7 +27,9 @@ public class AssertThrowsPracticeTest {
         });
     }
 
-    // fix this test. change assertion method to more lenient.
+    /**
+     * FIXME:  fix this test. change assertion method to more lenient.
+     */
     @Test
     void test2() {
         Assertions.assertThrowsExactly(RuntimeException.class, () -> {
