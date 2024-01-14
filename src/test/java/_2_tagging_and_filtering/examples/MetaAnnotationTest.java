@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class MetaAnnotationTest {
 
-    @Slow
+    @Slow // we can create our own annotation. it is more convenient. and it can be reused everywhere in project.
     @Test
     public void slowTest() {
     }
