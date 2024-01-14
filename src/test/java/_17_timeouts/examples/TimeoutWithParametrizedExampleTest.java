@@ -6,7 +6,6 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 public class TimeoutWithParametrizedExampleTest {
 
-
     @ParameterizedTest
     @Timeout(1)
     @ValueSource(ints = {1, 2, 3, 4})

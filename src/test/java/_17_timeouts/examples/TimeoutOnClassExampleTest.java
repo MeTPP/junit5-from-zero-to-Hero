@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Timeout;
 @Timeout(5)
 public class TimeoutOnClassExampleTest {
 
-
     @Test
     @Timeout(1)
     void shouldFailAfterOneSecond() throws InterruptedException {
@@ -18,5 +17,4 @@ public class TimeoutOnClassExampleTest {
     void shouldFailAfterDefaultTimeoutOfFiveSeconds() throws InterruptedException {
         Thread.sleep(10_000);
     }
-
 }

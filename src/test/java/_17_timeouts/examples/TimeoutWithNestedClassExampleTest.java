@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Timeout;
 
 @Timeout(5)
 public class TimeoutWithNestedClassExampleTest {
-
     @Nested
     class NestedClassWithoutTimeout {
         @Test
@@ -29,7 +28,5 @@ public class TimeoutWithNestedClassExampleTest {
         void shouldFailAfterOneSecond() throws InterruptedException {
             Thread.sleep(10_000);
         }
-
     }
-
 }
