@@ -18,6 +18,11 @@ public class TagExampleTest {
     void testWithTags() {
     }
 
+
+    /**
+     * this test will be skipped.
+     * @see build.gradle:20
+     */
     @Tag("fast")
     @Test
     void testWithFastTag() {
