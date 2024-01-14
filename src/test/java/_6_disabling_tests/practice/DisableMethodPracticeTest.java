@@ -1,4 +1,4 @@
-package _6_disabling_tests_done.practice;
+package _6_disabling_tests.practice;
 
 public class DisableMethodPracticeTest {
 

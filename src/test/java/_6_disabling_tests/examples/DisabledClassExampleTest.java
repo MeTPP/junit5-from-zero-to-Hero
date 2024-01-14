@@ -1,4 +1,4 @@
-package _6_disabling_tests_done.examples;
+package _6_disabling_tests.examples;
 
 
 import org.junit.jupiter.api.Disabled;
