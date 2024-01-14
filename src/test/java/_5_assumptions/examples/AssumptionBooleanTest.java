@@ -6,14 +6,21 @@ import org.junit.jupiter.api.Test;
 public class AssumptionBooleanTest {
 
 
+    /**
+     * assumeTrue/assumeFalse - validate the given assumption.
+     */
     @Test
-    void assumeTrue() {
-        // boolean
+    void testAssumeTrueWithBoolean() {
         Assumptions.assumeTrue(true);
         Assumptions.assumeTrue(true, () -> "trueSupplier");
         Assumptions.assumeTrue(true, "true");
+    }
 
-        // booleanSupplier
+    /**
+     * do the same but with boolean supplier as a param
+     */
+    @Test
+    void testAssumeTrueWithBooleanSupplier() {
         Assumptions.assumeTrue(() -> true);
         Assumptions.assumeTrue(() -> true, () -> "true");
         Assumptions.assumeTrue(() -> true, "true");
