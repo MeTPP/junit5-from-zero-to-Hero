@@ -15,15 +15,12 @@ import org.junit.jupiter.api.Test;
 @Tag("fast")
 public class ClassTagExampleTest {
 
-
     @Test
     void test1() {
-
     }
 
     @Test
     void test2() {
-
     }
 
     @Test
