@@ -8,6 +8,7 @@ import java.lang.reflect.Method;
 public class DisplayNameGeneratorsTest {
 
     @Nested
+    @DisplayNameGeneration(DisplayNameGenerator.Simple.class)
     class SimpleDisplayNameCheck {
         /**
          * TODO: add Simple DisplayNameGenerator to nested class SimpleDisplayNameCheck
@@ -23,11 +24,21 @@ public class DisplayNameGeneratorsTest {
      *  and add Standard DisplayNameGenerator to it.
      */
 
+    @Nested
+    @DisplayNameGeneration(DisplayNameGenerator.Standard.class)
+    class StandardDisplayNameCheck {
+        @Test
+        void test() {
+
+        }
+    }
+
 
     /**
      * TODO:  add display generator that will remove underscores in names
      */
     @Nested
+    @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
     class Replace_underscores_please {
 
         @Test
@@ -36,7 +47,7 @@ public class DisplayNameGeneratorsTest {
     }
 
     @Nested
-    @IndicativeSentencesGeneration(separator = "___", generator = DisplayNameGenerator.IndicativeSentences.class)
+    @IndicativeSentencesGeneration(separator = "___", generator = DisplayNameGenerator.ReplaceUnderscores.class)
     class IndicativeSentencesGenerationExample {
 
 
@@ -63,11 +74,37 @@ public class DisplayNameGeneratorsTest {
      *     with two simple tests inside
      */
 
+    @Nested
+    @IndicativeSentencesGeneration(separator = "###", generator = DisplayNameGenerator.ReplaceUnderscores.class)
+    class OurTestClass {
+
+        @Test
+        void test1_test1() {
+
+        }
+
+        @Test
+        void test2_test() {
+
+        }
+
+    }
+
 
     /*
      * TODO:create nested class with @IndicativeSentencesGeneration with separator "!!!"
      * don't specify generator
      */
+
+    @Nested
+    @IndicativeSentencesGeneration(separator = "!!!")
+    class OurTestClass1 {
+
+        @Test
+        void method_test() {
+        }
+
+    }
 
 
     /**
@@ -89,11 +126,45 @@ public class DisplayNameGeneratorsTest {
     /*
      *  TODO: write your own DisplayNameGenerator that will:
      *      display name for class with logic: "JUNIT5_HERO + className"
-     *      where JUNIT5_HERO is constant and class name - variable
+     *      where JUNIT5_HERO is constant and class name - variable.
      *      method name display should: add "%" in the end of each method name
      */
 
+    @Nested
+    @DisplayNameGeneration(CustomDisplayNameGeneratorJunit.class)
+    class TestCustomDisplayNameGenerator {
 
+        @Test
+        void tests() {
+
+        }
+
+        @Test
+        void tests1() {
+
+        }
+
+    }
+
+
+}
+
+class CustomDisplayNameGeneratorJunit implements DisplayNameGenerator {
+
+    @Override
+    public String generateDisplayNameForClass(Class<?> testClass) {
+        return "JUNIT5_HERO" + testClass.getName();
+    }
+
+    @Override
+    public String generateDisplayNameForNestedClass(Class<?> nestedClass) {
+        return null;
+    }
+
+    @Override
+    public String generateDisplayNameForMethod(Class<?> testClass, Method testMethod) {
+        return testMethod.getName() + "%";
+    }
 }
 
 
@@ -106,7 +177,7 @@ class CustomDisplayNameGenerator implements DisplayNameGenerator {
 
     @Override
     public String generateDisplayNameForNestedClass(Class<?> nestedClass) {
-        return nestedClass.getName();
+        return nestedClass.getAnnotation(Tag.class).value();
     }
 
     @Override
