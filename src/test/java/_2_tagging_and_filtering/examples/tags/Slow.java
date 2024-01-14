@@ -7,8 +7,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target({ElementType.TYPE, ElementType.METHOD})
-@Retention(RetentionPolicy.RUNTIME)
-@Tag("slow")
+@Target({ElementType.TYPE, ElementType.METHOD}) // here we specify what targets are applicable for annotation
+@Retention(RetentionPolicy.RUNTIME) // here we specify how long annotations are to be retained
+@Tag("slow") // here we compose default junit annotation with our custom.
 public @interface Slow {
 }

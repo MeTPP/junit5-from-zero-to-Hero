@@ -13,8 +13,6 @@ public class GradleFilterTest {
 //    @Tag("fast")
     @Tag("slow")
     void test() {
-
-
     }
 
 }
