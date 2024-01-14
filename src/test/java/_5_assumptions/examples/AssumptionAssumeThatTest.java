@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class AssumptionAssumeThatTest {
 
-    /*
+    /**
      * assumingThat - executes the supplied executable if the supplied assumption passed successfully
      */
     @Test
