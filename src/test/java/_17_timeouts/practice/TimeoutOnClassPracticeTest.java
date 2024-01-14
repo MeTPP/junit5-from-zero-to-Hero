@@ -10,12 +10,12 @@ public class TimeoutOnClassPracticeTest {
 
     @Test
     void shouldFailAfterOneSecond() throws InterruptedException {
-        Thread.sleep(10_000);
+        Thread.sleep(2_024);
     }
 
     @Test
     void shouldFailAfterOneSecondAnother() throws InterruptedException {
-        Thread.sleep(10_000);
+        Thread.sleep(2_024);
     }
 
 }
