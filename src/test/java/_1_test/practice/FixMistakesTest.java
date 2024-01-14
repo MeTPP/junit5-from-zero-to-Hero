@@ -9,14 +9,14 @@ public class FixMistakesTest {
      * TODO: fix reason why this test doesn't start
      */
     @Test
-    private void test() {
+    void test() {
     }
 
     /**
      * TODO: fix reason why this test doesn't start¬
      */
     @Test
-    void calculate(int x) {
+    void calculate() {
     }
 
     /**
@@ -24,7 +24,7 @@ public class FixMistakesTest {
      */
     @Test
     void assertionTest() {
-        Assertions.assertFalse(true);
+        Assertions.assertFalse(false);
     }
 
     /**
@@ -32,7 +32,7 @@ public class FixMistakesTest {
      */
     @Test
     void calculationMistake() {
-        Assertions.assertTrue(3 > 5 + 1);
+        Assertions.assertTrue(3 < 5 + 1);
     }
 
 
