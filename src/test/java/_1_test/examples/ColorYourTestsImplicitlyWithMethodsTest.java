@@ -13,20 +13,30 @@ import org.junit.jupiter.api.Test;
  */
 public class ColorYourTestsImplicitlyWithMethodsTest {
 
+
+    /**
+     * good news is good news. true still equals true:)
+     */
     @Test
     void ourFirstSuccessfulTest() {
-        Assertions.assertTrue(true); // good news is good news. true still equals true:)
+        Assertions.assertTrue(true);
     }
 
+    /**
+     * look what kind of exception is thrown.
+     */
     @Test
     void ourFirstFailingTest() {
-        Assertions.fail(); // look what kind of exception is thrown.
+        Assertions.fail();
     }
 
+
+    /**
+     * look what kind of exception is thrown.
+     */
     @Test
     void ourFirstAbortedTest() {
-        Assumptions.abort(); // look what kind of exception is thrown.
+        Assumptions.abort();
     }
-
 
 }
