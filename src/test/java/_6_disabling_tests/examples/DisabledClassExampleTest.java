@@ -2,6 +2,7 @@ package _6_disabling_tests.examples;
 
 
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @Disabled(value = "because of issue 42")
@@ -9,12 +10,14 @@ public class DisabledClassExampleTest {
 
 
     @Test
-    void test1() {
+    @DisplayName("i can't start")
+    void testWillNotStart() {
 
     }
 
     @Test
-    void test2() {
+    @DisplayName("me too :(")
+    void thisTestWillNotStartToo() {
 
     }
 

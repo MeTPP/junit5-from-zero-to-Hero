@@ -8,12 +8,12 @@ public class DisableMethodExampleTest {
 
     @Test
     @Disabled("disabled")
-    void test1() {
+    void disabledTest() {
     }
 
 
     @Test
-    void test2() {
+    void thisTestWillPassSuccessfully() {
     }
 
 }
