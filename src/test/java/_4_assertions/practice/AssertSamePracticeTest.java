@@ -10,8 +10,8 @@ public class AssertSamePracticeTest {
      * TODO: change assertion to make test green
      */
     @Test
-    void testObjectsSame(){
-        Assertions.assertSame(new Object(), new Object());
+    void testObjectsSame() {
+        Assertions.assertNotSame(new Object(), new Object());
     }
 
 
@@ -32,8 +32,8 @@ public class AssertSamePracticeTest {
      */
     @Test
     void assertNotSame() {
-        var expected = Integer.valueOf(1000);
-        var actual = Integer.valueOf(1000);
+        var expected = Integer.valueOf(128);
+        var actual = Integer.valueOf(128);
         Assertions.assertNotSame(expected, actual);
     }
 

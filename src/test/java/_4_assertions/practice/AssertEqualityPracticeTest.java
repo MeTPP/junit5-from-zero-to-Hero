@@ -11,6 +11,12 @@ public class AssertEqualityPracticeTest {
       calculate expected value by yourself.
      */
 
+    @Test
+    void testScore() {
+        var result = calculateScore(15, "Jane");
+        Assertions.assertEquals(19, result);
+    }
+
 
     /**
      * TODO: make test green
@@ -22,7 +28,7 @@ public class AssertEqualityPracticeTest {
 
 
     private String greeting() {
-        return "Hello World!";
+        return "Hello World";
     }
 
     private int calculateScore(int age, String name) {

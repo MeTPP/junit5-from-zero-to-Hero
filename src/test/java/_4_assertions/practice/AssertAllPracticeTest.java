@@ -12,7 +12,9 @@ public class AssertAllPracticeTest {
      */
     @Test
     void assertAllWithHeading() {
-        Assertions.assertAll(() -> Assertions.assertTrue(true));
+        Assertions.assertAll(
+                "heading",
+                () -> Assertions.assertTrue(true));
     }
 
     /**
@@ -21,7 +23,11 @@ public class AssertAllPracticeTest {
      */
     @Test
     void assertAll() {
-        Assertions.assertAll();
+        Assertions.assertAll(
+                () -> Assertions.assertTrue(true),
+                () -> Assertions.assertFalse(false)
+
+        );
     }
 
 
@@ -30,10 +36,13 @@ public class AssertAllPracticeTest {
      */
     @Test
     void fixAssertAll() {
-        Assertions.assertAll(Stream.of(() -> Assertions.assertTrue(true)));
-        Assertions.assertTrue(false);
-        Assertions.assertTrue(4 > 5);
-        Assertions.assertEquals(3, "hello".length());
+        Assertions.assertAll(
+                Stream.of(() -> Assertions.assertTrue(true),
+                        () -> Assertions.assertTrue(false),
+                        () -> Assertions.assertTrue(4 > 5),
+                        () -> Assertions.assertEquals(3, "hello".length())
+                )
+        );
     }
 
 

@@ -12,9 +12,11 @@ public class AssertThrowsPracticeTest {
      */
     @Test
     void test() {
-        Assertions.assertDoesNotThrow(() -> {
+        var runtimeException = Assertions.assertThrows(RuntimeException.class, () -> {
             throw new RuntimeException("boom!");
         });
+
+        Assertions.assertEquals("boom!", runtimeException.getMessage());
     }
 
     /**
@@ -22,7 +24,7 @@ public class AssertThrowsPracticeTest {
      */
     @Test
     void test1() {
-        Assertions.assertThrowsExactly(RuntimeException.class, () -> {
+        Assertions.assertThrowsExactly(NumberFormatException.class, () -> {
             throw new NumberFormatException();
         });
     }
@@ -32,7 +34,7 @@ public class AssertThrowsPracticeTest {
      */
     @Test
     void test2() {
-        Assertions.assertThrowsExactly(RuntimeException.class, () -> {
+        Assertions.assertThrows(RuntimeException.class, () -> {
             throw new NumberFormatException();
         });
     }

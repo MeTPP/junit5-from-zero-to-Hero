@@ -13,7 +13,7 @@ public class AssertTimeoutsPracticeTest {
      */
     @Test
     void test() {
-        Assertions.assertTimeout(Duration.ofSeconds(1), () -> Thread.sleep(1100));
+        Assertions.assertTimeout(Duration.ofSeconds(1), () -> Thread.sleep(40));
     }
 
 

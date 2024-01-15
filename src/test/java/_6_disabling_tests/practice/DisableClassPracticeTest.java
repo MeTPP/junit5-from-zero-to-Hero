@@ -1,6 +1,7 @@
 package _6_disabling_tests.practice;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.Test;
  * your teammate forgot to implement his test... and your build is broken.
  * fix it with help of 1 annotation
  */
+@Disabled("todo implement after next sprint(255)")
 public class DisableClassPracticeTest {
 
 

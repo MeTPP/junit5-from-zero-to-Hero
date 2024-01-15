@@ -12,15 +12,21 @@ public class AssertNullAndNotNullPracticeTest {
     @Test
     void testNull() {
         String x = null;
-        Assertions.assertNotNull(x);
+        Assertions.assertNull(x);
     }
 
     /**
-     * TODO: Using Assertions.assertNotNull()/Assertions.assertNotNull()
+     * TODO: Using Assertions.assertNotNull()/Assertions.assertNull()
      *  test provider() method.
      */
     String provider() {
         return "";
+    }
+
+    @Test
+    void testProvider() {
+        Assertions.assertNotNull(provider());
+        Assertions.assertNull(provider());
     }
 
 
@@ -29,6 +35,42 @@ public class AssertNullAndNotNullPracticeTest {
      * TODO: create 5 tests assigning Integer, Object, String,TestEnum, TestRecord to null
      *  and then assert them using assertNull/assertNotNull
      */
+    @Test
+    void test1() {
+        Integer x = null;
+        Assertions.assertNull(x);
+
+    }
+
+    @Test
+    void test2() {
+
+        String x = null;
+        Assertions.assertNull(x);
+
+    }
+
+    @Test
+    void test3() {
+        Object o = new Object();
+        Assertions.assertNotNull(o);
+
+    }
+    @Test
+    void test4() {
+
+        var testRecord = new TestRecord();
+        Assertions.assertNotNull(testRecord);
+
+    }
+
+    @Test
+    void test5() {
+
+        TestEnum testEnum = null;
+        Assertions.assertNull(null);
+
+    }
 
 
     record TestRecord() {

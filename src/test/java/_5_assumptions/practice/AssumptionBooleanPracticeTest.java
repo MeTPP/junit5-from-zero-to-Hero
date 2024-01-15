@@ -14,7 +14,7 @@ public class AssumptionBooleanPracticeTest {
      */
     @Test
     void test() {
-        Assumptions.assumeTrue(hasMinimumProcessors(50));
+        Assumptions.assumeTrue(hasMinimumProcessors(4));
         Assertions.assertTrue(true);
     }
 
@@ -24,7 +24,7 @@ public class AssumptionBooleanPracticeTest {
      */
     @Test
     void testUserLoginStatus() {
-        Assumptions.assumeTrue(isUserLoggedIn(false), "Assumption failed because the user is not logged in");
+        Assumptions.assumeTrue(isUserLoggedIn(true), "Assumption failed because the user is not logged in");
         Assertions.assertTrue(true);
     }
 
@@ -32,6 +32,11 @@ public class AssumptionBooleanPracticeTest {
     /*
      * TODO: create assumption based on isRandomPositive() method
      */
+
+    @Test
+    void testIsRandomPositiveNumber() {
+        Assumptions.assumeTrue(isRandomPositive());
+    }
 
     private boolean isRandomPositive() {
         Random random = new Random();
