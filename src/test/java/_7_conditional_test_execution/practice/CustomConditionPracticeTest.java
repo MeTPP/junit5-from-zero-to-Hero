@@ -8,16 +8,23 @@ import java.util.Random;
 public class CustomConditionPracticeTest {
 
 
+    /*
+     * FIXME: run this test and then fix this test.
+     */
     @EnabledIf("myCondition")
     @Test
-    void test() {
-        //FIXME run this test and then fix this test.
+    void testWithCustomCondition() {
+
     }
 
 
-    //TODO create test that will be disabled if disabled() is true.
+    /*
+     * TODO: create test that will be disabled if disabled() is true.
+     */
 
-    //TODO create test and you custom condition. Use @EnabledIf to activate test.
+    /*
+     * TODO: create test and you custom condition. Use @EnabledIf to activate test.
+     */
 
     void myCondition() {
         System.out.println("let's run the test!!!");
