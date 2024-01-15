@@ -3,41 +3,43 @@ package _4_assertions.examples;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+
+/**
+ * simple check that actual value is null or is not null.
+ */
 public class AssertNullAndNotNullExampleTest {
 
     String name = null;
     String secondName = "";
 
     @Test
-    void test1() {
+    void testAssertNull() {
         Assertions.assertNull(name);
     }
 
     @Test
-    void test() {
+    void testAssertNullWithMessage() {
         Assertions.assertNull(name, "should be null");
     }
 
     @Test
-    void test2() {
+    void testAssertNullWithMessageSupplier() {
         Assertions.assertNull(name, () -> "should  be null");
     }
 
-
     @Test
-    void test3() {
+    void testAssertNotNull() {
         Assertions.assertNotNull(secondName);
     }
 
     @Test
-    void test4() {
+    void testAssertNotNullWithMessage() {
         Assertions.assertNotNull(secondName, "should not be null");
     }
 
     @Test
-    void test5() {
+    void testAssertNotNullWithMessageSupplier() {
         Assertions.assertNotNull(secondName, () -> "should not be null");
     }
-
 
 }

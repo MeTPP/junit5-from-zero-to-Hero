@@ -5,14 +5,16 @@ import org.junit.jupiter.api.Timeout;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Timeout annotation is used to define a timeout for a method or all testable methods
+ */
 public class TimeoutExampleTest {
 
     @Test
     @Timeout(1)
     void shouldFailAfterOneSecond() throws InterruptedException {
-        Thread.sleep(2_000);
+        Thread.sleep(2_024);
     }
-
 
     @Test
     @Timeout(value = 2, unit = TimeUnit.MINUTES)

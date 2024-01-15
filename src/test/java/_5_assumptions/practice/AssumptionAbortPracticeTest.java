@@ -10,15 +10,23 @@ import java.util.List;
 public class AssumptionAbortPracticeTest {
 
 
-    //TODO: create test that will abort
+    /*
+     * TODO: create test that will abort
+     */
 
-    //TODO: create test that will abort and will supply abort reason as a string
+    /*
+     * TODO: create test that will abort and will supply abort reason as a string
+     */
 
-    //TODO: create test that will abort and will supply abort reason as a message supplier
+    /*
+     * TODO: create test that will abort and will supply abort reason as a message supplier
+     */
 
-    //TODO: abort test if current day monday or friday
+    /*
+     * TODO: abort test if current day monday or friday
+     */
     @Test
-    void abortIfMondayOrFriday() {
+    void abortIfCurrentDayIsMondayOrFriday() {
         if (List.of(DayOfWeek.MONDAY, DayOfWeek.FRIDAY).contains(LocalDate.now().getDayOfWeek())) {
 
         }

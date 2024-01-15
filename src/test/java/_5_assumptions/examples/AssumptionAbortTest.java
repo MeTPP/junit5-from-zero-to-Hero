@@ -3,7 +3,11 @@ package _5_assumptions.examples;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Test;
 
-public class AssumptionAbort {
+/**
+ * Assumptions is a collection
+ * of utility methods that support conditional test execution based on assumptions.
+ */
+public class AssumptionAbortTest {
 
 
     @Test

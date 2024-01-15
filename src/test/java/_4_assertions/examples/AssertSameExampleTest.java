@@ -3,23 +3,26 @@ package _4_assertions.examples;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Assert that the actual object and the unexpected object  are not the same object.
+ */
 public class AssertSameExampleTest {
 
     String firstName = "x";
     String secondName = "x";
 
     @Test
-    void test() {
+    void assertAssertNotSame() {
         Assertions.assertNotSame(firstName, secondName);
     }
 
     @Test
-    void test1() {
+    void testAssertNotSameWithStringMessage() {
         Assertions.assertNotSame(firstName, secondName, "should not be same ");
     }
 
     @Test
-    void test2() {
+    void testAssertNotSameWithMessageSupplier() {
         Assertions.assertNotSame(firstName, secondName, () -> "should not be same ");
     }
 }

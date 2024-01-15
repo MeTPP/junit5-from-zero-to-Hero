@@ -7,10 +7,19 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
+/**
+ * An assertion is a statement or a piece of code that checks whether a given condition is true or false.
+ */
 public class AssertAllTest {
 
+    /**
+     * AssertAll - assert that all supplied executables do not throw exceptions
+     * it can be helpful when you need to assert some assertions and to avoid situation
+     * when one assertion fails and others don't even started. In this case you need to run tests again and again..
+     * you can specify heading in assertAll statement.
+     */
     @Test
-    void test() {
+    void testAssertAllWithHeading() {
         Assertions.assertAll(
                 "this is group name",
                 () -> Assertions.assertTrue(true),
@@ -18,16 +27,22 @@ public class AssertAllTest {
         );
     }
 
+    /**
+     * but you can pass only varargs of executables.
+     */
     @Test
-    void test1() {
+    void assertAllWithoutHeading() {
         Assertions.assertAll(
                 () -> Assertions.assertTrue(true),
                 () -> Assertions.assertFalse(false)
         );
     }
 
+    /**
+     * same as set
+     */
     @Test
-    void test2() {
+    void assertAllWithSetAndHeading() {
         Assertions.assertAll(
                 "group name with executable collection",
                 Set.of(
@@ -36,8 +51,11 @@ public class AssertAllTest {
         );
     }
 
+    /**
+     * same as Stream
+     */
     @Test
-    void test3() {
+    void assertAllWithStreamAndHeading() {
         Assertions.assertAll(
                 "group name with executable stream",
                 Stream.of(
@@ -46,8 +64,12 @@ public class AssertAllTest {
         );
     }
 
+
+    /**
+     * you can omit heading
+     */
     @Test
-    void test4() {
+    void assertAllWithStreamWithoutHeading() {
         Assertions.assertAll(
                 Stream.of(
                         () -> Assertions.assertTrue(true),
@@ -56,14 +78,15 @@ public class AssertAllTest {
     }
 
 
+    /**
+     * you can use list as well
+     */
     @Test
-    void test5() {
+    void assertAllWithListWithoutHeading() {
         Assertions.assertAll(
                 List.of(
                         () -> Assertions.assertTrue(true),
                         () -> Assertions.assertFalse(false))
         );
     }
-
-
 }
