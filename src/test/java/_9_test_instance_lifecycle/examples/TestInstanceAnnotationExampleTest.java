@@ -41,7 +41,7 @@ public class TestInstanceAnnotationExampleTest {
      */
     @Test
     void test2() {
-        System.out.println("test. PAY ATTENTION : " + this);
+        System.out.println("test2. PAY ATTENTION : " + this);
         System.out.println("test2");
     }
 
@@ -51,7 +51,7 @@ public class TestInstanceAnnotationExampleTest {
     }
 
     @AfterAll
-    static void afterAllExample() { // pay attention: it does not work without static modifier
+    void afterAllExample() { // pay attention: it does not work without static modifier
         System.out.println("after ALL tests - run once");
     }
 }

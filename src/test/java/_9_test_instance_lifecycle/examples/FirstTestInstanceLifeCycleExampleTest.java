@@ -38,8 +38,7 @@ public class FirstTestInstanceLifeCycleExampleTest {
      */
     @Test
     void test2() {
-        System.out.println("test2");
-        System.out.println("test. PAY ATTENTION : " + this);
+        System.out.println("test2. PAY ATTENTION : " + this);
     }
 
     @AfterEach
