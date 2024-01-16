@@ -8,9 +8,18 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 
+/**
+ * By default, test methods will be ordered using an algorithm
+ * that is deterministic but intentionally non-obvious.
+ */
 public class MethodOrderExampleTestCase {
 
 
+    /**
+     * to control order in which test methods are executed
+     * = annotate your method @TestMethodOrder +  specify  MethodOrdered
+     * Random Method Orderer orders test methods pseudo-randomly
+     */
     @Nested
     @TestMethodOrder(MethodOrderer.Random.class)
     class RandomMethodOrder {
@@ -23,6 +32,9 @@ public class MethodOrderExampleTestCase {
         }
     }
 
+    /**
+     * OrderAnnotation sorts test methods numerically based on @Order annotation
+     */
     @Nested
     @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
     class OrderAnnotationMethodOrder {
@@ -44,6 +56,9 @@ public class MethodOrderExampleTestCase {
     }
 
 
+    /**
+     * MethodName sorts test methods alphanumerically based on their names
+     */
     @Nested
     @TestMethodOrder(MethodOrderer.MethodName.class)
     class MethodNameAnnotationMethodOrder {
@@ -56,7 +71,6 @@ public class MethodOrderExampleTestCase {
         void b_test() {
         }
 
-
         @Test
         void a_test() {
         }
@@ -64,6 +78,9 @@ public class MethodOrderExampleTestCase {
 
     }
 
+    /**
+     * DisplayName sorts test methods alphanumerically based on their display names
+     */
     @Nested
     @TestMethodOrder(MethodOrderer.DisplayName.class)
     class DisplayAnnotationMethodOrder {
@@ -87,6 +104,10 @@ public class MethodOrderExampleTestCase {
 
     }
 
+    /**
+     * sorts test methods alphanumerically based on their names but deprecated
+     * use MethodName Orderer instead
+     */
     @Nested
     @TestMethodOrder(MethodOrderer.Alphanumeric.class)
     class AlphanumericAnnotationMethodOrder {
@@ -99,7 +120,6 @@ public class MethodOrderExampleTestCase {
         void b_test() {
         }
 
-
         @Test
         void a_test() {
         }
@@ -108,6 +128,9 @@ public class MethodOrderExampleTestCase {
     }
 
 
+    /**
+     * Custom - you can provide your own logic
+     */
     @Nested
     @TestMethodOrder(CustomMethodOrderer.class)
     class CustomAnnotationMethodOrder {
@@ -119,7 +142,6 @@ public class MethodOrderExampleTestCase {
         @Test
         void b_test() {
         }
-
 
         @Test
         @Custom
@@ -137,6 +159,9 @@ public class MethodOrderExampleTestCase {
 @interface Custom {
 }
 
+/**
+ * first we run methods with @Custom annotation
+ */
 class CustomMethodOrderer implements MethodOrderer {
     @Override
     public void orderMethods(MethodOrdererContext context) {
