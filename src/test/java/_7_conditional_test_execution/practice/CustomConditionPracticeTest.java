@@ -21,13 +21,28 @@ public class CustomConditionPracticeTest {
     /*
      * TODO: create test that will be disabled if disabled() is true.
      */
+    @EnabledIf("disabled")
+    @Test
+    void testDisable() {
+
+    }
 
     /*
      * TODO: create test and you custom condition. Use @EnabledIf to activate test.
      */
 
-    void myCondition() {
+    @EnabledIf("returnTrue")
+    @Test
+    void ourCustomTest() {
+    }
+
+    boolean returnTrue() {
+        return true;
+    }
+
+    boolean myCondition() {
         System.out.println("let's run the test!!!");
+        return true;
     }
 
     boolean disabled() {
