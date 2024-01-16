@@ -1,5 +1,6 @@
 package _7_conditional_test_execution.examples;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
@@ -9,13 +10,18 @@ import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
  */
 public class SystemPropertyConditionExampleTest {
 
-    @Test
-    @EnabledIfSystemProperty(named = "dev-machine", matches = "true")
-    void onlyOnDevMachine() {
+    @BeforeAll
+    static void beforeAll() {
+        System.setProperty("dev-machine", "true");
     }
 
     @Test
     @DisabledIfSystemProperty(named = "dev-machine", matches = "true")
+    void onlyOnDevMachine() {
+    }
+
+    @Test
+    @EnabledIfSystemProperty(named = "dev-machine", matches = "true")
     void onlyOnRemoteServer() {
     }
 }
