@@ -21,10 +21,12 @@ public class OsConditionExampleTest {
 
 
     @EnabledOnOs(MAC)
+    @Test
     void testOnMac() {
     }
 
     @EnabledOnOs({OS.LINUX, MAC})
+    @Test
     void testOnMacAndLinux() {
 
     }
