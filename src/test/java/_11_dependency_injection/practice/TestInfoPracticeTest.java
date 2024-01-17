@@ -6,7 +6,9 @@ import org.junit.jupiter.api.TestInfo;
 
 public class TestInfoPracticeTest {
 
-    // sout all tags of this method you can't use sout("one"), sout("two") etc
+    /*
+     * TODO: print all tags of this method using testInfo object
+     */
     @Test
     @Tag("one")
     @Tag("two")
@@ -15,8 +17,9 @@ public class TestInfoPracticeTest {
     }
 
 
-    // add display name to this test
-    // sout it using test info
+    /*
+     * TODO: add display name to this test, print it, using testInfo
+     */
     @Test
     void test1(TestInfo testInfo) {
     }
