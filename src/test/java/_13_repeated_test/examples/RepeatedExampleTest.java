@@ -27,7 +27,7 @@ public class RepeatedExampleTest {
     }
 
     /**
-     * we need change required display name for each repetition
+     * we can change required display name for each repetition
      */
     @RepeatedTest(value = 5, name = "attempt {currentRepetition} of total amount: {totalRepetitions}")
     void repeatTestFiveTimesWithCustomName() {
