@@ -13,13 +13,13 @@ public class ValueSourceExampleTest {
 
     @ParameterizedTest
     @ValueSource(shorts = {1, 1})
-    void test(short x) {
+    void testTwo(short x) {
         Assertions.assertEquals(1, x);
     }
 
     @ParameterizedTest
     @ValueSource(ints = {1, 1})
-    void test(int x) {
+    void testOne(int x) {
         Assertions.assertTrue(x > 0);
     }
 
