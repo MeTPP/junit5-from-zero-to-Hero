@@ -11,7 +11,7 @@ import org.junit.jupiter.api.parallel.ExecutionMode;
  * TODO: oh, we don't want wait for 50*1000*3 = 150 sec to execute - find way to end this in a seconds
  */
 @Execution(ExecutionMode.CONCURRENT)
-public class OhWeAreInTroubleTest {
+public class ExecutionModeAnnotationPracticeTest {
 
 
     @RepeatedTest(50)

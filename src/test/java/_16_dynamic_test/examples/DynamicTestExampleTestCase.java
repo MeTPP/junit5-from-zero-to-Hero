@@ -19,7 +19,9 @@ import static org.junit.jupiter.api.Named.named;
 
 public class DynamicTestExampleTestCase {
 
-    // it is wrong. should return specified types.
+    /**
+     * it is wrong. should return specified types.
+     */
     @TestFactory
     List<String> test() {
         return List.of("string");
