@@ -1,5 +1,7 @@
 package _17_timeouts.examples;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
@@ -29,15 +31,53 @@ public class TimeoutExampleTest {
      * The timeout value is specified along with its time unit, such as seconds, minutes, etc.
      */
     @Test
-    @Timeout(value = 2, unit = TimeUnit.MINUTES)
+    @Timeout(value = 2, unit = TimeUnit.SECONDS)
     void shouldFailAfterTwoMinutes() {
         System.out.println(Thread.currentThread().getName());
     }
 
-    @Test
-    @Timeout(value = 5, unit = TimeUnit.MINUTES, threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
-    void shouldUseSeparateThread() {
-        System.out.println(Thread.currentThread().getName());
+
+    @Nested
+    class ThreadModeExample {
+
+        String currentThreadName = Thread.currentThread().getName();
+
+        /**
+         * SEPARATE_THREAD - The test code is executed in a different thread than that of the calling code.
+         */
+        @Test
+        @Timeout(value = 5, unit = TimeUnit.MINUTES, threadMode = Timeout.ThreadMode.SEPARATE_THREAD)
+        void shouldUseSeparateThread() {
+            var testThreadName = Thread.currentThread().getName();
+            Assertions.assertNotEquals(currentThreadName, testThreadName);
+            System.out.println(currentThreadName + " " + testThreadName);
+        }
+
+        /**
+         * The test code is executed in the thread of the calling code.
+         */
+        @Test
+        @Timeout(value = 5, unit = TimeUnit.MINUTES, threadMode = Timeout.ThreadMode.SAME_THREAD)
+        void shouldUseSameThread() {
+            var testThreadName = Thread.currentThread().getName();
+            Assertions.assertEquals(currentThreadName, testThreadName);
+            System.out.println(currentThreadName + " " + testThreadName);
+        }
+
+        /**
+         * INFERRED - The thread mode is determined using the parameter configured
+         * in property "junit.jupiter.execution.timeout.thread.mode.default"
+         * or fallbacks to SAME_THREAD
+         */
+        @Test
+        @Timeout(value = 5, unit = TimeUnit.MINUTES, threadMode = Timeout.ThreadMode.INFERRED)
+        void shouldFallbackToSameThread() {
+            var testThreadName = Thread.currentThread().getName();
+            Assertions.assertEquals(currentThreadName, testThreadName);
+            System.out.println(currentThreadName + " " + testThreadName);
+        }
+
+
     }
 
 
