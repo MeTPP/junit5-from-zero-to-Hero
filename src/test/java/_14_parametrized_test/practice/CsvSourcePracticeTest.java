@@ -15,7 +15,7 @@ public class CsvSourcePracticeTest {
                         1,car
                         2,home
             """)
-    void test(String car, int home) {
+    void test(int home, String car) {
 
     }
 
@@ -27,8 +27,8 @@ public class CsvSourcePracticeTest {
     @CsvSource(value = {
             "first#second",
             "third#forth"
-    })
-    void test(String x, String y) {
+    }, delimiterString = "#")
+    void test1(String x, String y) {
 
     }
 
@@ -36,9 +36,10 @@ public class CsvSourcePracticeTest {
      * FIXME: skip headline in csv and make test green
      */
     @ParameterizedTest
-    @CsvSource(textBlock =
+    @CsvSource(useHeadersInDisplayName = false
+            , textBlock =
             """
-                    name,surname
+                    #name,surname
                     Dalisa,Silvernail
                     Payal,Cadena
                      """
@@ -53,4 +54,26 @@ public class CsvSourcePracticeTest {
     /*
      * TODO: create your own 2 parametrized tests using @CsvSource.
      */
+    @ParameterizedTest
+    @CsvSource(
+            textBlock =
+                    """
+                            x,1
+                            y,1
+                            """
+    )
+    void ownTest(String string, int i) {
+        Assertions.assertEquals(1, i);
+    }
+
+    @ParameterizedTest
+    @CsvSource(
+            value = {
+                    "1,2,3",
+                    "4,5,6"
+            }
+    )
+    void numbers(int x, int y, int z) {
+
+    }
 }

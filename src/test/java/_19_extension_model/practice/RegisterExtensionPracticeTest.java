@@ -3,6 +3,7 @@ package _19_extension_model.practice;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.RegisterExtension;
 
@@ -13,7 +14,8 @@ public class RegisterExtensionPracticeTest {
 
 
     @RegisterExtension
-    static MockServiceExtension mockService = new MockServiceExtension().configure("World!!!");
+    static MockServiceExtension mockService = new MockServiceExtension()
+            .configure(" World!!!");
 
     /**
      * FIXME: Implement a test that uses the injected mock service
@@ -21,12 +23,12 @@ public class RegisterExtensionPracticeTest {
      */
     @Test
     void testServiceMethod() {
-        Assertions.assertEquals(mockService.greet(), "hello! World!!!");
+        Assertions.assertEquals("hello! World!!!", mockService.greet());
 
     }
 
 
-    private static class MockServiceExtension {
+    private static class MockServiceExtension implements BeforeAllCallback {
         private String greet;
 
         public MockServiceExtension() {
@@ -38,11 +40,10 @@ public class RegisterExtensionPracticeTest {
             return this;
         }
 
-
         /**
          * hint.
          */
-        //        @Override
+        @Override
         public void beforeAll(ExtensionContext context) throws Exception {
             System.out.println(greet);
         }

@@ -9,7 +9,7 @@ public class ParametrizedPracticeTest {
      * provide 3 values to @ValueSource to make test green
      */
     @ParameterizedTest
-    @ValueSource(ints = {})
+    @ValueSource(ints = {1, 2, 3})
     void testPositives(int x) {
         Assertions.assertTrue(x > 0);
     }

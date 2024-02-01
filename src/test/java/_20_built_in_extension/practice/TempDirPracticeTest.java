@@ -18,8 +18,10 @@ public class TempDirPracticeTest {
      * TODO using tempDir write 123 to file then read it and assert it.
      */
     @Test
-    void writeToFile() {
-
+    void writeToFile() throws IOException {
+        var file = tempDir.resolve("file.txt");
+        Files.writeString(file, "123");
+        Assertions.assertEquals("123", Files.readString(file));
     }
 
 
@@ -29,7 +31,7 @@ public class TempDirPracticeTest {
     @Test
     void copyFileFromSourceToTarget(@TempDir Path source, @TempDir Path target) throws IOException {
         Path sourceFile = source.resolve("test.txt");
-        Files.writeString(target, "abc");
+        Files.writeString(sourceFile, "abc");
         Path targetFile = Files.copy(sourceFile, target.resolve("test.txt"));
 
         Assertions.assertNotEquals(sourceFile, targetFile);

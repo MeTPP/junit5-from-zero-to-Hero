@@ -1,12 +1,13 @@
 package _15_test_templates.practice;
 
+import org.jetbrains.annotations.NotNull;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.TestTemplate;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.api.extension.ExtensionContext;
-import org.junit.jupiter.api.extension.TestTemplateInvocationContext;
-import org.junit.jupiter.api.extension.TestTemplateInvocationContextProvider;
+import org.junit.jupiter.api.extension.*;
 
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Stream;
 
 public class TestTemplatePracticeTest {
@@ -20,7 +21,7 @@ public class TestTemplatePracticeTest {
         @TestTemplate
         @ExtendWith(UserRoleTestTemplateInvocationContextProvider.class)
         void testAccessBasedOnUserRole(String role) {
-
+            Assertions.assertTrue(Set.of("ADMIN", "GUEST", "USER").contains(role));
         }
 
         static class UserRoleTestTemplateInvocationContextProvider implements TestTemplateInvocationContextProvider {
@@ -35,7 +36,31 @@ public class TestTemplatePracticeTest {
              */
             @Override
             public Stream<TestTemplateInvocationContext> provideTestTemplateInvocationContexts(ExtensionContext context) {
-                return Stream.empty();
+                return Stream.of(
+                        provideContext("ADMIN"),
+                        provideContext("USER"),
+                        provideContext("GUEST")
+                );
+            }
+
+            @NotNull
+            private static TestTemplateInvocationContext provideContext(String role) {
+                return new TestTemplateInvocationContext() {
+                    @Override
+                    public List<Extension> getAdditionalExtensions() {
+                        return List.of(new ParameterResolver() {
+                            @Override
+                            public boolean supportsParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+                                return true;
+                            }
+
+                            @Override
+                            public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+                                return role;
+                            }
+                        });
+                    }
+                };
             }
         }
     }
@@ -51,7 +76,7 @@ public class TestTemplatePracticeTest {
         @TestTemplate
         @ExtendWith(InputFormatTestTemplateInvocationContextProvider.class)
         void testInputFormat(String input) {
-
+            Assertions.assertTrue(Set.of("XML", "JSON", "PLAIN").contains(input));
         }
 
         static class InputFormatTestTemplateInvocationContextProvider implements TestTemplateInvocationContextProvider {
@@ -61,7 +86,7 @@ public class TestTemplatePracticeTest {
              */
             @Override
             public boolean supportsTestTemplate(ExtensionContext context) {
-                return false;
+                return true;
             }
 
             /**
@@ -70,7 +95,37 @@ public class TestTemplatePracticeTest {
              */
             @Override
             public Stream<TestTemplateInvocationContext> provideTestTemplateInvocationContexts(ExtensionContext context) {
-                return Stream.empty();
+                return Stream.of(
+                        provideContext("XML"),
+                        provideContext("JSON"),
+                        provideContext("PLAIN")
+                );
+            }
+
+            @NotNull
+            private static TestTemplateInvocationContext provideContext(String format) {
+                return new TestTemplateInvocationContext() {
+
+                    @Override
+                    public String getDisplayName(int invocationIndex) {
+                        return format;
+                    }
+
+                    @Override
+                    public List<Extension> getAdditionalExtensions() {
+                        return List.of(new ParameterResolver() {
+                            @Override
+                            public boolean supportsParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+                                return true;
+                            }
+
+                            @Override
+                            public Object resolveParameter(ParameterContext parameterContext, ExtensionContext extensionContext) throws ParameterResolutionException {
+                                return format;
+                            }
+                        });
+                    }
+                };
             }
         }
     }

@@ -10,7 +10,7 @@ public class ValueSourcePracticeTest {
      */
     @ParameterizedTest
     @ValueSource(ints = {1, 2, 3})
-    void bytesTest(byte x) {
+    void bytesTest(int x) {
         System.out.println(x);
     }
 
@@ -31,7 +31,49 @@ public class ValueSourcePracticeTest {
      *
      * </ol>
      */
-    void testMePlease() {
+    @ParameterizedTest
+    @ValueSource(shorts = {1})
+    void testMePlease(short s) {
+    }
+
+    @ParameterizedTest
+    @ValueSource(bytes = {1})
+    void testMePlease(byte s) {
+    }
+
+    @ParameterizedTest
+    @ValueSource(floats = {1f})
+    void testMePlease(float f) {
+    }
+
+    @ParameterizedTest
+    @ValueSource(longs = {1L})
+    void testMePlease(long f) {
+    }
+
+    @ParameterizedTest
+    @ValueSource(doubles = {1d})
+    void testMePlease(double f) {
+    }
+
+    @ParameterizedTest
+    @ValueSource(chars = {'x'})
+    void testMePlease(char f) {
+    }
+
+    @ParameterizedTest
+    @ValueSource(booleans = {true})
+    void testMePlease(boolean f) {
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"hello", "junit5", "hero!"})
+    void testMePlease(String f) {
+    }
+
+    @ParameterizedTest
+    @ValueSource(classes = {String.class})
+    void testMePlease(Class f) {
     }
 
 }

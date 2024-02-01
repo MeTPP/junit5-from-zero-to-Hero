@@ -11,7 +11,7 @@ public class TimeoutPracticeTest {
     @Timeout(value = 1)
     @Test
     void test() throws InterruptedException {
-        Thread.sleep(1100);
+        Thread.sleep(900);
     }
 
 

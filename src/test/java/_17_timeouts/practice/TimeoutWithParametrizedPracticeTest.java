@@ -2,6 +2,8 @@ package _17_timeouts.practice;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Timeout;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class TimeoutWithParametrizedPracticeTest {
 
@@ -11,6 +13,8 @@ public class TimeoutWithParametrizedPracticeTest {
      *  Each test should complete within 3 seconds
      */
     @Timeout(value = 3)
+    @ParameterizedTest
+    @ValueSource(ints = {1, 2, 3})
     void testDataProcessingWithTimeout(int datasetSize) throws InterruptedException {
         boolean isProcessedSuccessfully = processData(datasetSize);
         Assertions.assertTrue(isProcessedSuccessfully);

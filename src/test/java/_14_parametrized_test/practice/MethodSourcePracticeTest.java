@@ -26,7 +26,7 @@ public class MethodSourcePracticeTest {
      */
     @ParameterizedTest
     @MethodSource("provideIntegersValues")
-    void testPerson(Integer i) {
+    void testPerson1(Integer integer) {
 
     }
 
@@ -35,11 +35,25 @@ public class MethodSourcePracticeTest {
      * TODO: create parametrized Test
      * with method source that will provide 5 different Persons {@link Person}
      */
-    void testPerson(Person person) {
+    @ParameterizedTest
+    @MethodSource
+    void testPerson3(Person person) {
         Assertions.assertAll(
                 () -> Assertions.assertTrue(person.age > 18),
                 () -> Assertions.assertNotNull(person.name),
                 () -> Assertions.assertTrue(person.name.startsWith("J"))
+        );
+    }
+
+    static Stream<Person> testPerson3() {
+        return Stream.of(
+
+                new Person("Jane", 21),
+                new Person("John", 25),
+                new Person("Jacob", 26),
+                new Person("Julia", 27),
+                new Person("Jerry", 27)
+
         );
     }
 
@@ -51,7 +65,7 @@ public class MethodSourcePracticeTest {
          */
         @ParameterizedTest
         @MethodSource("_14_parametrized_test.practice.DataProviders#provideStrings")
-        void testStringLength(String input, int expectedLength) {
+        void testStringLength(int expectedLength, String input) {
             Assertions.assertEquals(expectedLength, input.length());
         }
     }
@@ -61,7 +75,7 @@ public class MethodSourcePracticeTest {
         return IntStream.range(0, 5).boxed();
     }
 
-    Stream<Arguments> provideStringValues() {
+    static Stream<Arguments> provideStringValues() {
         return Stream.of(
                 Arguments.arguments("x"),
                 Arguments.arguments("y")
@@ -71,11 +85,12 @@ public class MethodSourcePracticeTest {
     record Person(String name, Integer age) {
     }
 }
+
 class DataProviders {
     public static Stream<Arguments> provideStrings() {
         return Stream.of(
-                    Arguments.of(5, "hello"),
-                    Arguments.of(12, "JUnit")
+                Arguments.of(5, "hello"),
+                Arguments.of(5, "JUnit")
         );
     }
 }

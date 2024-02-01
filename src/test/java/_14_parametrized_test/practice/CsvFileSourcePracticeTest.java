@@ -17,6 +17,7 @@ public class CsvFileSourcePracticeTest {
         @ParameterizedTest
         @CsvFileSource(resources = "/arithmeticData.csv")
         void testAddition(int a, int b, int expectedSum) {
+            Assertions.assertEquals(expectedSum, a + b);
         }
     }
 
@@ -30,6 +31,7 @@ public class CsvFileSourcePracticeTest {
         @ParameterizedTest
         @CsvFileSource(resources = "/stringData.csv")
         void testToUpperCase(String input, String expectedOutput) {
+            Assertions.assertEquals(expectedOutput, input.toUpperCase());
 
         }
     }
@@ -42,9 +44,9 @@ public class CsvFileSourcePracticeTest {
          *  The CSV file '/userData.csv' should contain rows in the format: username, age, isValid
          */
         @ParameterizedTest
-        @CsvFileSource(resources = "/userData.csv")
-        void testUserValidation(String username, int age, boolean isValid) {
-
+        @CsvFileSource(resources = "/userData.csv", numLinesToSkip = 1)
+        void testUserValidation(String username, Integer age, boolean isValid) {
+            Assertions.assertEquals(age != null, isValid);
         }
     }
 

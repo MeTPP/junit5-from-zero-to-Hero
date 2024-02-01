@@ -9,6 +9,7 @@ public class RepeatedPracticeTest {
     /**
      * TODO: write repeated test that will launch 3 times
      */
+    @RepeatedTest(3)
     void testThatRepeats3Times() {
 
     }
@@ -18,6 +19,7 @@ public class RepeatedPracticeTest {
      *  <b>right now I am executing repetition number i</b>
      *  where i is current repetition number
      */
+    @RepeatedTest(value = 3, name = "right now I am executing repetition number {currentRepetition}")
     void testWithDisplayPatter() {
     }
 
@@ -25,7 +27,7 @@ public class RepeatedPracticeTest {
     /*
      * FIXME: change method. it should abort execution if 2 exceptions already happened
      */
-    @RepeatedTest(value = 10)
+    @RepeatedTest(value = 10, failureThreshold = 2)
     void test(RepetitionInfo repetitionInfo) {
         if (repetitionInfo.getCurrentRepetition() % 2 == 0) {
             Assertions.fail();

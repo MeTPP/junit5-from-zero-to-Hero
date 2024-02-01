@@ -10,7 +10,7 @@ import org.junit.jupiter.api.parallel.ExecutionMode;
 /**
  * FIXME: make tests green
  */
-@Timeout(1)
+@Timeout(3)
 public class TimeoutWithNestedClassPracticeTest {
 
 

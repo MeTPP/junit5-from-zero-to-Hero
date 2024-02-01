@@ -19,7 +19,10 @@ public class DynamicTestPracticeTestCase {
          */
         @TestFactory
         Stream<DynamicTest> stringManipulationTests() {
-            return Stream.empty();
+            return Stream.of(
+                    DynamicTest.dynamicTest("1", () -> Assertions.assertEquals("STAS", "stas".toUpperCase())),
+                    DynamicTest.dynamicTest("1", () -> Assertions.assertEquals("stasstas", "stas".repeat(2)))
+            );
         }
     }
 
@@ -32,9 +35,9 @@ public class DynamicTestPracticeTestCase {
         @TestFactory
         Stream<DynamicTest> checkArrayLengths() {
             Object[][] testData = {
-                    {new int[]{1, 2, 3}, 5},
-                    {new int[]{4, 5}, 12},
-                    {new int[]{6, 7, 8, 9}, 3}
+                    {new int[]{1, 2, 3}, 3},
+                    {new int[]{4, 5}, 2},
+                    {new int[]{6, 7, 8, 9}, 4}
             };
             return Stream.of(testData).map(array -> DynamicTest.dynamicTest(
                     "Array with length " + (int) array[1],
