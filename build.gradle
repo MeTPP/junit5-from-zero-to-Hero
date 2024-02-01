@@ -17,8 +17,8 @@ dependencies {
 
 test {
     useJUnitPlatform() {
-        excludeTags("fast", "ui")
-        includeTags("slow")
+//        excludeTags("fast", "ui")
+//        includeTags("slow")
     }
 }
 kotlin {

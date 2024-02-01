@@ -1,9 +1,6 @@
 package _10_nested.practice;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class NestedPracticePart2Test {
 
@@ -11,6 +8,20 @@ public class NestedPracticePart2Test {
      *  TODO: create nested class and two method inside it
      *   tag both of these methods using only one annotation
      */
+
+
+    @Nested
+    @Tag("nested")
+    class NestedClass {
+        @Test
+        void test1() {
+        }
+
+        @Test
+        void test2() {
+        }
+
+    }
 
 
     int x;
@@ -27,6 +38,12 @@ public class NestedPracticePart2Test {
      */
     @Nested
     class FirstClass {
+
+        @BeforeEach
+        void setUp() {
+            x = 0;
+        }
+
         @Test
         void test() {
             Assertions.assertEquals(0, x);
@@ -36,6 +53,12 @@ public class NestedPracticePart2Test {
 
     @Nested
     class SecondClass {
+
+        @BeforeEach
+        void setUp() {
+            x = 5;
+        }
+
         @Test
         void test() {
             Assertions.assertEquals(5, x);
