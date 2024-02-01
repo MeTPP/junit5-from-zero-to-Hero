@@ -22,7 +22,9 @@ public class RepeatedPracticeTest {
     }
 
 
-    // FIXME: change method. it should abort execution if 2 exceptions already happened
+    /*
+     * FIXME: change method. it should abort execution if 2 exceptions already happened
+     */
     @RepeatedTest(value = 10)
     void test(RepetitionInfo repetitionInfo) {
         if (repetitionInfo.getCurrentRepetition() % 2 == 0) {

@@ -1,0 +1,4 @@
+name,age,isValid
+Alice,30,true
+Bob,,false
+Charlie,45,true

@@ -1,6 +1,7 @@
 package _14_parametrized_test.practice;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -42,6 +43,19 @@ public class MethodSourcePracticeTest {
         );
     }
 
+    @Nested
+    class CalculatorTests {
+
+        /**
+         * FIXME: make test green
+         */
+        @ParameterizedTest
+        @MethodSource("_14_parametrized_test.practice.DataProviders#provideStrings")
+        void testStringLength(String input, int expectedLength) {
+            Assertions.assertEquals(expectedLength, input.length());
+        }
+    }
+
 
     public static Stream<Integer> provideIntegersValues() {
         return IntStream.range(0, 5).boxed();
@@ -55,6 +69,13 @@ public class MethodSourcePracticeTest {
     }
 
     record Person(String name, Integer age) {
-
+    }
+}
+class DataProviders {
+    public static Stream<Arguments> provideStrings() {
+        return Stream.of(
+                    Arguments.of(5, "hello"),
+                    Arguments.of(12, "JUnit")
+        );
     }
 }

@@ -34,7 +34,7 @@ public class NestedPracticePart2Test {
 
     /**
      * TODO: make _10_nested.practice.NestedPracticePart2Test.FirstClass#test()
-     *  and _10_nested.practice.NestedPracticePart2Test.SecondClass#test() at the same time.
+     *  and _10_nested.practice.NestedPracticePart2Test.SecondClass#test()  green at the same time.
      */
     @Nested
     class FirstClass {
