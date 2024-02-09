@@ -1,4 +1,4 @@
-package _2_tagging_and_filtering.practice;
+package junit._2_tagging_and_filtering.practice;
 
 
 /**

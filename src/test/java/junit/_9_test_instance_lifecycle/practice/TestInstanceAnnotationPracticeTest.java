@@ -1,4 +1,4 @@
-package _9_test_instance_lifecycle.practice;
+package junit._9_test_instance_lifecycle.practice;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package _12_test_interfaces_and_default_methods.examples;
+package junit._12_test_interfaces_and_default_methods.examples;
 
 import org.junit.jupiter.api.*;
 

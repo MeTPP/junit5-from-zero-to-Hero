@@ -1,4 +1,4 @@
-package _2_tagging_and_filtering.examples.tags;
+package junit._2_tagging_and_filtering.examples.tags;
 
 import org.junit.jupiter.api.Tag;
 

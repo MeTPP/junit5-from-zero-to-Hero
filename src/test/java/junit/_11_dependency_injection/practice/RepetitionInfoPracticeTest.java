@@ -1,4 +1,4 @@
-package _11_dependency_injection.practice;
+package junit._11_dependency_injection.practice;
 
 public class RepetitionInfoPracticeTest {
 

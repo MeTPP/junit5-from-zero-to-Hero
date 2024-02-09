@@ -1,4 +1,4 @@
-package _10_nested.practice;
+package junit._10_nested.practice;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

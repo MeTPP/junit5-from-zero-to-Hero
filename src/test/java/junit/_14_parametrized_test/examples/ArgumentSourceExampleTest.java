@@ -1,4 +1,4 @@
-package _14_parametrized_test.examples;
+package junit._14_parametrized_test.examples;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.extension.ExtensionContext;

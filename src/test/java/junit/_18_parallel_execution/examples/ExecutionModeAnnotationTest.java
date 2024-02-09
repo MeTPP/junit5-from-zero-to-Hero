@@ -1,4 +1,4 @@
-package _18_parallel_execution.examples;
+package junit._18_parallel_execution.examples;
 
 
 import org.junit.jupiter.api.RepeatedTest;

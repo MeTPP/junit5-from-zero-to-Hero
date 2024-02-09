@@ -1,4 +1,4 @@
-package _6_disabling_tests.practice;
+package junit._6_disabling_tests.practice;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

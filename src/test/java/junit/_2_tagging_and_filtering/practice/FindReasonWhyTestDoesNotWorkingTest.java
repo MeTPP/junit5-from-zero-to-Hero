@@ -1,4 +1,4 @@
-package _2_tagging_and_filtering.practice;
+package junit._2_tagging_and_filtering.practice;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;

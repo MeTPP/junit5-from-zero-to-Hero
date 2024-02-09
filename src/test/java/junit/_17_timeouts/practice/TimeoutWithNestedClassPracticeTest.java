@@ -1,4 +1,4 @@
-package _17_timeouts.practice;
+package junit._17_timeouts.practice;
 
 
 import org.junit.jupiter.api.Nested;

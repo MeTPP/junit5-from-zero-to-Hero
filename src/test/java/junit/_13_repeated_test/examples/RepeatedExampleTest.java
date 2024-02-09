@@ -1,4 +1,4 @@
-package _13_repeated_test.examples;
+package junit._13_repeated_test.examples;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.RepeatedTest;

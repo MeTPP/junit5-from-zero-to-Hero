@@ -1,4 +1,4 @@
-package _1_test.practice;
+package junit._1_test.practice;
 
 public class CreateYourFirstTests {
 

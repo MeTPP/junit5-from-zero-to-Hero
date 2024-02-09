@@ -1,4 +1,4 @@
-package _3_display_name.examples;
+package junit._3_display_name.examples;
 
 import org.junit.jupiter.api.*;
 

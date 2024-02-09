@@ -1,4 +1,4 @@
-package _8_test_execution_order.practice;
+package junit._8_test_execution_order.practice;
 
 public class MethodOrderExampleTestCase {
 

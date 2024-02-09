@@ -1,4 +1,4 @@
-package _7_conditional_test_execution.practice;
+package junit._7_conditional_test_execution.practice;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledOnOs;

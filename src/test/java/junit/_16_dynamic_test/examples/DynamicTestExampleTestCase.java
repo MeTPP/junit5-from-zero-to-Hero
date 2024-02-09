@@ -1,4 +1,4 @@
-package _16_dynamic_test.examples;
+package junit._16_dynamic_test.examples;
 
 import org.junit.jupiter.api.*;
 

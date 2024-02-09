@@ -1,4 +1,4 @@
-package _17_timeouts.examples;
+package junit._17_timeouts.examples;
 
 import org.junit.jupiter.api.Timeout;
 import org.junit.jupiter.params.ParameterizedTest;

@@ -1,4 +1,4 @@
-package _3_display_name.practice;
+package junit._3_display_name.practice;
 
 import org.junit.jupiter.api.*;
 

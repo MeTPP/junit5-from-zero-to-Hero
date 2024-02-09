@@ -1,4 +1,4 @@
-package _7_conditional_test_execution.examples;
+package junit._7_conditional_test_execution.examples;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledForJreRange;

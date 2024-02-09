@@ -1,4 +1,4 @@
-package _14_parametrized_test.practice;
+package junit._14_parametrized_test.practice;
 
 import org.junit.jupiter.api.Assertions;
 

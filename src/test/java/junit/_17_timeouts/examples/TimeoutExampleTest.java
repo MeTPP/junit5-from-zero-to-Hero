@@ -1,4 +1,4 @@
-package _17_timeouts.examples;
+package junit._17_timeouts.examples;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Nested;

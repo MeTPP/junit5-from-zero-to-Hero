@@ -1,4 +1,4 @@
-package _16_dynamic_test.practice;
+package junit._16_dynamic_test.practice;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DynamicTest;

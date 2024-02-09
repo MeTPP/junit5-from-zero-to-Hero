@@ -1,4 +1,4 @@
-package _15_test_templates.examples;
+package junit._15_test_templates.examples;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Nested;

@@ -1,4 +1,4 @@
-package _1_test.examples;
+package junit._1_test.examples;
 
 import org.junit.jupiter.api.Test;
 import org.opentest4j.TestAbortedException;

@@ -1,4 +1,4 @@
-package _18_parallel_execution.practice;
+package junit._18_parallel_execution.practice;
 
 import org.junit.jupiter.api.*;
 

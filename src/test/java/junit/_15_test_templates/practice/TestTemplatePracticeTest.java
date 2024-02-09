@@ -1,4 +1,4 @@
-package _15_test_templates.practice;
+package junit._15_test_templates.practice;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.TestTemplate;

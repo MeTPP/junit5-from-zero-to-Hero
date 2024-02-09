@@ -1,4 +1,4 @@
-package _6_disabling_tests.practice;
+package junit._6_disabling_tests.practice;
 
 public class DisableMethodPracticeTest {
 

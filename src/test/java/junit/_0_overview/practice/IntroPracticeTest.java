@@ -1,4 +1,4 @@
-package _0_overview.practice;
+package junit._0_overview.practice;
 
 import _1_test.examples.ColorYourTestsExplicitlyExampleTest;
 

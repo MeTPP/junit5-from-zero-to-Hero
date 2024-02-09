@@ -1,4 +1,4 @@
-package _8_test_execution_order.examples;
+package junit._8_test_execution_order.examples;
 
 import org.junit.jupiter.api.*;
 

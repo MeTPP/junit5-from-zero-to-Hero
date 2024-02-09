@@ -1,4 +1,4 @@
-package _3_display_name.practice;
+package junit._3_display_name.practice;
 
 public class DisplayDefaultNameGeneratorTest {
 

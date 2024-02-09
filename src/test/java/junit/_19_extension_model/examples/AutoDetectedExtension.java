@@ -1,4 +1,4 @@
-package _19_extension_model.examples;
+package junit._19_extension_model.examples;
 
 import org.junit.jupiter.api.extension.*;
 

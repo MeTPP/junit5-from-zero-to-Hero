@@ -1,4 +1,4 @@
-package _20_built_in_extension.examples;
+package junit._20_built_in_extension.examples;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package _5_assumptions.examples;
+package junit._5_assumptions.examples;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Assumptions;

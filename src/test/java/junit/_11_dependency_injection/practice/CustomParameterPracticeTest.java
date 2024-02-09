@@ -1,4 +1,4 @@
-package _11_dependency_injection.practice;
+package junit._11_dependency_injection.practice;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

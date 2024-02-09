@@ -1,4 +1,4 @@
-package _4_assertions.examples;
+package junit._4_assertions.examples;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
